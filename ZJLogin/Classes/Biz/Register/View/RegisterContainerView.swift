@@ -8,6 +8,10 @@
 import UIKit
 
 class RegisterContainerView: UIScrollView {
+    
+    private lazy var containerView = UIView()
+    
+    private lazy var titleView = PageCommonTitleView(title: Locale.register.localized, subTitle: .init())
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +28,25 @@ private extension RegisterContainerView {
     
     func setupViews() {
         
+        containerView.add(to: self).snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        titleView.add(to: containerView).snp.makeConstraints {
+            $0.top.equalToSuperview().inset(40.auto)
+            $0.left.right.equalToSuperview().inset(20.auto)
+        }
+        
+        
     }
     
 }
+
+extension RegisterContainerView {
+    
+    func setSubTitle(_ subTitle: NSAttributedString) {
+        titleView.setSubTitle(subTitle)
+    }
+    
+}
+

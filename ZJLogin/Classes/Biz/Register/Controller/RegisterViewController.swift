@@ -8,10 +8,17 @@
 import UIKit
 
 class RegisterViewController: BaseViewController {
-
+    
+    let viewModel = RegisterViewModel()
+    
+    // MARK: - Lazy load
+    private lazy var containerView = RegisterContainerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        bindViewModel()
+        viewModel.registerTipsAction.execute()
     }
 
 }
@@ -20,14 +27,24 @@ private extension RegisterViewController {
     
     func setupViews() {
         
-        let label = UILabel().then {
-            $0.text = "我是注册页面"
-        }
-        
-        label.add(to: view).snp.makeConstraints {
-            $0.center.equalToSuperview()
+        containerView.add(to: view).snp.makeConstraints {
+            $0.edges.equalToSafeArea(of: view)
         }
         
     }
     
+    func bindViewModel() {
+        
+        viewModel.registerTipsAction.elements
+            .subscribeNext(weak: containerView, RegisterContainerView.setSubTitle)
+            .disposed(by: disposeBag)
+        
+    }
+    
 }
+
+/**
+ viewModel.registerTipsAction.elements
+     .subscribeNext(weak: containerView, RegisterContainerView.setSubTitle)
+     .disposed(by: disposeBag)
+ */

@@ -5,3 +5,6 @@
   Created by Jercan on 2023/9/12.
   
 */
+
+/// 密码登录
+"register" = "Register";
