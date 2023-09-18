@@ -6,5 +6,20 @@
   
 */
 
-/// 密码登录
+/// 注册
 "register" = "Daftar";
+"enterPhoneNumer" = "Silakan masukkan no. handphone Anda";
+"enterVerficationCode" = "Masukkan kode verifikasi";
+"send" = "Kirim";
+"resend" = "Kirim Ulang";
+"next" = "Selanjutnya";
+"tncLendingBorrowing" = "Syarat dan Ketentuan Pinjam Meminjam Asetku";
+"privacyPolicy" = "Kebijakan Privasi Asetku";
+"agreementDescription" = "Saya telah membaca dan menyetujui %@ dan %@";
+
+"phoneCountError" = "Nomor handphone harus 10-13 angka";
+"phonePrefixError" = "Nomor handphone harus dimulai dengan 08";
+
+/// 登录
+"login" = "Login";
+

@@ -195,6 +195,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZJActiveLabel/ZJActiveLabel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZJBase/ZJBase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZJCommonDefines/ZJCommonDefines.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZJDevice/ZJDevice.framework"
@@ -202,6 +203,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ZJKeychain/ZJKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZJLocalizable/ZJLocalizable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZJRegion/ZJRegion.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZJValidator/ZJValidator.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Action/Action.framework"
@@ -223,6 +225,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZJActiveLabel/ZJActiveLabel.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZJBase/ZJBase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZJCommonDefines/ZJCommonDefines.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZJDevice/ZJDevice.framework"
@@ -230,6 +233,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ZJKeychain/ZJKeychain.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZJLocalizable/ZJLocalizable.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZJRegion/ZJRegion.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZJValidator/ZJValidator.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

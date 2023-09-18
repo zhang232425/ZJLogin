@@ -1,0 +1,31 @@
+{
+  "name": "ZJValidator",
+  "version": "0.1.0",
+  "summary": "A short description of ZJValidator.",
+  "homepage": "https://github.com/zhang232425/ZJValidator",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zhang232425": "519301084@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/zhang232425/ZJValidator.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "ZJValidator/Classes/**/*",
+  "resource_bundles": {
+    "ZJValidator": [
+      "ZJValidator/Assets/**/*"
+    ]
+  },
+  "dependencies": {
+    "ZJLocalizable": [
+
+    ]
+  }
+}

@@ -10,6 +10,17 @@ import ZJLocalizable
 enum Locale: String {
     
     case register
+    case enterPhoneNumer
+    case enterVerficationCode
+    case send
+    case resend
+    case next
+    case tncLendingBorrowing
+    case privacyPolicy
+    case agreementDescription
+    case login
+    case phoneCountError
+    case phonePrefixError
     
 }
 
@@ -28,3 +39,18 @@ extension Locale: ZJLocalizable {
     }
     
 }
+
+extension Locale {
+    
+    func localized(arguments: [String]) -> String {
+        String(format: localized, arguments: arguments)
+    }
+    
+}
+
+extension Locale {
+    
+    static let phonePrefix = "08"
+    
+}
+

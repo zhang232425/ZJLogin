@@ -9,42 +9,18 @@ import Action
 import RxSwift
 import ZJExtension
 
-final class RegisterViewModel {
-    
-    /*
-    private(set) var registerTipsAction: Action<Void, NSAttributedString>!
-    
-    init() {
-        
-        registerTipsAction = .init(workFactory: { _ in
-            Request.registerTips().map { (full, bold) -> NSAttributedString in
-                
-                guard !full.isEmpty else { return .init() }
-                
-                let attrStr = NSMutableAttributedString(string: full)
-                let fullRange = NSMakeRange(0, full.count)
-                attrStr.addAttribute(.foregroundColor, value: UIColor(hexString: "#666666"), range: fullRange)
-                attrStr.addAttribute(.font, value: UIFont.regular16, range: fullRange)
-                
-                let boldRange = attrStr.mutableString.range(of: bold)
-                if boldRange.location != NSNotFound {
-                    attrStr.addAttribute(.font, value: UIFont.bold16, range: boldRange)
-                }
-                return attrStr
-                
-            }
-        })
-        
-    }
-     */
+final class RegisterViewModel: InputChecker {
     
     private(set) var registerTipsAction: Action<Void, NSAttributedString>!
+    
+    private(set) var registerCaptcha: Action<(account: String,
+                                              imageCaptcha: String?), Request.getCaptcha.Result>!
     
     init() {
         
         registerTipsAction = .init(workFactory: { _ in
             
-            Request.registerTips().map { model -> NSAttributedString in
+            Request.account.registerTips().map { model -> NSAttributedString in
                 
                 guard let tips = model else { return .init() }
                 
@@ -63,10 +39,17 @@ final class RegisterViewModel {
             }
         })
         
+        registerCaptcha = .init(workFactory: { [weak self] input -> Single<Request.getCaptcha.Result> in
+            
+            if let error = self?.checkAccountInputError(input.account) {
+                return .error(error)
+            }
+            
+            return Request.getCaptcha.onRegister(account: input.account, imageCaptcha: input.imageCaptcha)
+            
+        })
+        
     }
     
 }
 
-/**
- 
- */

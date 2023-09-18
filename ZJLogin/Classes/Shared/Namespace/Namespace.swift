@@ -38,3 +38,31 @@ struct NamespaceWrapper<T> {
     }
     
 }
+
+struct UIStandard<Base> {
+    
+    let base: Base
+    
+    init(base: Base) {
+        self.base = base
+    }
+    
+}
+
+protocol UIStandardizable {
+    
+    associatedtype UIStandardBase
+    
+    static var standard: UIStandard<UIStandardBase>.Type { get set }
+    
+}
+
+extension UIStandardizable {
+    
+    static var standard: UIStandard<Self>.Type {
+        get { UIStandard<Self>.self }
+        set { }
+    }
+    
+}
+

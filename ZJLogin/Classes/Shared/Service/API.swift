@@ -18,6 +18,14 @@ enum API {
     
     // MARK: -  ------ 登录 --------
     
+    // MARK: - ------- 获取验证码 -------
+    /// 获取验证码-登录
+    case getCaptcha_login(account: String, imageCaptcha: String?)
+    /// 获取验证码-注册
+    case getCaptcha_register(account: String, imageCaptcha: String?)
+    /// 获取验证码-忘记密码
+    case getCaptcha_forgotPwd(account: String, imageCaptcha: String?)
+    
     
 }
 
@@ -31,6 +39,14 @@ extension API: ZJRequestTargetType {
         switch self {
         case .registerTips:
             return "/api/app/user/register/tips"
+        case .getCaptcha_login:
+            return "/api/app/user/sms/captcha"
+        case .getCaptcha_register:
+            return "/api/app/user/sms/captcha"
+        case .getCaptcha_forgotPwd:
+            return "/api/app/user/getCaptchaNoToken"
+            
+            
         }
     }
     
@@ -38,13 +54,36 @@ extension API: ZJRequestTargetType {
         switch self {
         case .registerTips:
             return .get
+        case .getCaptcha_login:
+            return .get
+        case .getCaptcha_register:
+            return .get
+        case .getCaptcha_forgotPwd:
+            return .get
         }
     }
     
     var task: Moya.Task {
         switch self {
+            
         case .registerTips:
             return .requestPlain
+            
+        case .getCaptcha_login(let account, let captcha):
+            var param: [String: Any] = ["phoneNumber": account, "smsBizType": 2]
+            param["imageCaptcha"] = captcha
+            return .requestParameters(parameters: param, encoding: URLEncoding.default)
+            
+        case .getCaptcha_register(let account, let captcha):
+            var param: [String: Any] = ["phoneNumber": account, "smsBizType": 1]
+            param["imageCaptcha"] = captcha
+            return .requestParameters(parameters: param, encoding: URLEncoding.default)
+            
+        case .getCaptcha_forgotPwd(let account, let captcha):
+            var param: [String: Any] = ["phoneNumber": account]
+            param["imageCaptcha"] = captcha
+            return .requestParameters(parameters: param, encoding: URLEncoding.default)
+            
         }
     }
     

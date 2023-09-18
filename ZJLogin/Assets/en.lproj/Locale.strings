@@ -6,5 +6,21 @@
   
 */
 
-/// 密码登录
+/// 注册
 "register" = "Register";
+"enterPhoneNumer" = "Please enter your phone number";
+"enterVerficationCode" = "Please enter the verification code";
+"send" = "Send";
+"resend" = "Resend";
+"next" = "Next";
+"tncLendingBorrowing" = "TNC Lending and Borrowing Asetku";
+"privacyPolicy" = "Asetku Privacy Policy";
+"agreementDescription" = "I have read and agree to %@ and %@";
+
+"phoneCountError" = "The phone number must be 10-13 numbers";
+"phonePrefixError" = "Mobile number must start with 08";
+
+/// 登录
+"login" = "Login";
+
+

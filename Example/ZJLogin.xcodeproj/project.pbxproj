@@ -215,6 +215,7 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
+				"${BUILT_PRODUCTS_DIR}/ZJActiveLabel/ZJActiveLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/ZJBase/ZJBase.framework",
 				"${BUILT_PRODUCTS_DIR}/ZJCommonDefines/ZJCommonDefines.framework",
 				"${BUILT_PRODUCTS_DIR}/ZJDevice/ZJDevice.framework",
@@ -222,6 +223,7 @@
 				"${BUILT_PRODUCTS_DIR}/ZJKeychain/ZJKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/ZJLocalizable/ZJLocalizable.framework",
 				"${BUILT_PRODUCTS_DIR}/ZJRegion/ZJRegion.framework",
+				"${BUILT_PRODUCTS_DIR}/ZJValidator/ZJValidator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -244,6 +246,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZJActiveLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZJBase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZJCommonDefines.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZJDevice.framework",
@@ -251,6 +254,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZJKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZJLocalizable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZJRegion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZJValidator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

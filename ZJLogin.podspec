@@ -33,6 +33,7 @@ Pod::Spec.new do |s|
   s.dependency 'Then'
   
   s.dependency 'ZJRequest'
+  s.dependency 'ZJActiveLabel'
   s.dependency 'ZJLocalizable'
   s.dependency 'ZJRouter'
   s.dependency 'ZJRoutableTargets'
@@ -42,6 +43,7 @@ Pod::Spec.new do |s|
   s.dependency 'ZJCommonView'
   s.dependency 'ZJRefresh'
   s.dependency 'ZJCommonDefines'
+  s.dependency 'ZJValidator'
   
   
   

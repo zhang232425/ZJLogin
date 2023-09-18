@@ -46,6 +46,9 @@
     "ZJRequest": [
 
     ],
+    "ZJActiveLabel": [
+
+    ],
     "ZJLocalizable": [
 
     ],
@@ -71,6 +74,9 @@
 
     ],
     "ZJCommonDefines": [
+
+    ],
+    "ZJValidator": [
 
     ]
   }

@@ -14,5 +14,7 @@ target 'ZJLogin_Example' do
   pod 'ZJCommonView',        :git => 'git@github.com:zhang232425/ZJCommonView.git', :branch => 'main'
   pod 'ZJRefresh',           :git => 'git@github.com:zhang232425/ZJRefresh.git', :branch => 'main'
   pod 'ZJCommonDefines',     :git => 'git@github.com:zhang232425/ZJCommonDefines.git', :branch => 'main'
+  pod 'ZJActiveLabel',       :git => 'git@github.com:zhang232425/ZJActiveLabel.git', :branch => 'main'
+  pod 'ZJValidator',         :git => 'git@github.com:zhang232425/ZJValidator.git', :branch => 'main'
   
 end

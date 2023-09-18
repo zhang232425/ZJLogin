@@ -5,49 +5,41 @@
 //  Created by Jercan on 2023/9/13.
 //
 
-import RxSwift
 import ZJRequest
+import ZJValidator
 
-struct Request {
+struct Request {}
+
+struct RequestError: LocalizedError, CustomDebugStringConvertible {
     
-    /*
-    static func registerTips() -> Single<(String, String)> {
-        
-        API.registerTips.rx.request()
-            .mapObject(ZJRequestResult<[String: Any]>.self)
-            .map {
-                if let fullText = $0.data?["fullText"] as? String, let boldText = $0.data?["boldText"] as? String {
-                    return (fullText, boldText)
-                }
-                return ("", "")
-            }
-    }
-     */
+    let code: String?
+    let msg: String
     
-    
-    static func registerTips() -> Single<RegisterTipsModel?> {
-        
-        API.registerTips.rx.request()
-            .mapObject(ZJRequestResult<RegisterTipsModel>.self)
-            .map { $0.data }
-        
+    init(code: String?) {
+        self.code = code
+        self.msg = ""
     }
     
+    init(msg: String) {
+        self.code = nil
+        self.msg = msg
+    }
     
+    init(code: String?, msg: String) {
+        self.code = code
+        self.msg = msg
+    }
     
+    var errorDescription: String? { msg }
     
-    
+    var debugDescription: String { "code:\(code ?? ""), msg:\(msg)" }
     
 }
 
-/**
- 
- */
-
-/**
- static func fetchLaunchAdInfo() -> Single<LaunchAdInfo?> {
-     API.launchAd.rx.request()
-         .mapObject(ZJRequestResult<LaunchAdResult>.self)
-         .map { $0.data?.infos?.first}
- }
- */
+extension ZJRequestResult {
+    
+    var mappedMsg: String {
+        ZJResponseCodeValidator.validate(success: success, code: errCode, msg: errMsg).message ?? ""
+    }
+    
+}
