@@ -20,7 +20,11 @@
 "phoneCountError" = "The phone number must be 10-13 numbers";
 "phonePrefixError" = "Mobile number must start with 08";
 
+"captchaEmpty" = "Please enter the verification code.";
+"agreementEmpty" = "Please make sure you have read and agree to TnC Lending and Borrowing AsetKu and Asetku Privacy Policy.";
+"enterReferralCode" = "Please enter the invitation code";
+"makeSureApprovedTerms" = "Please make sure you have read and approved the terms and regulations";
+
 /// 登录
 "login" = "Login";
-
 

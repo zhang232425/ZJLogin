@@ -45,7 +45,14 @@ PODS:
   - ZJActiveLabel (0.1.0)
   - ZJBase (0.1.0):
     - RTRootNavigationController
+    - SnapKit
+    - ZJDevice
     - ZJExtension
+    - ZJHUD
+    - ZJLocalizable
+    - ZJLoginManager
+    - ZJRoutableTargets
+    - ZJRouter
   - ZJCommonDefines (0.1.0)
   - ZJCommonView (0.1.0)
   - ZJDevice (0.1.0):
@@ -80,6 +87,10 @@ PODS:
     - ZJRoutableTargets
     - ZJRouter
     - ZJValidator
+  - ZJLoginManager (0.1.0):
+    - ZJCommonDefines
+    - ZJKeychain
+    - ZJRequest
   - ZJRefresh (0.1.0):
     - ESPullToRefresh
   - ZJRegion (0.1.0)
@@ -119,6 +130,7 @@ SPEC REPOS:
     - ZJHUD
     - ZJKeychain
     - ZJLocalizable
+    - ZJLoginManager
     - ZJRegion
     - ZJRequest
     - ZJRouter
@@ -176,7 +188,7 @@ CHECKOUT OPTIONS:
     :commit: 2486e059bc9136b9afa180b628e782462f624a75
     :git: "git@github.com:zhang232425/ZJActiveLabel.git"
   ZJBase:
-    :commit: 329656def2f609e6e892bf00919f196ec062ad1f
+    :commit: 8871d1f4db76fa3110b7ed143771a678525099e2
     :git: "git@github.com:zhang232425/ZJBase.git"
   ZJCommonDefines:
     :commit: 4d9ba68728ed9fb171e7e72825ad8a67d12b34c4
@@ -185,7 +197,7 @@ CHECKOUT OPTIONS:
     :commit: 5006c5b7307f8f853a7b978061705c56267b3006
     :git: "git@github.com:zhang232425/ZJCommonView.git"
   ZJExtension:
-    :commit: c2ae1328ecd295f2a69afd9909879fb1748cabf2
+    :commit: c935c0c47955d9bf792cde38678bcfab769f7d40
     :git: "git@github.com:zhang232425/ZJExtension.git"
   ZJRefresh:
     :commit: d2855ff0b65e3142eb90a561827b7dd07fec044d
@@ -218,7 +230,7 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   ZJActiveLabel: 37970ddefe241f482b43893ca66868c0560fac14
-  ZJBase: a38dc134dca5ad2c40768bd37300e971c35f6214
+  ZJBase: 62bf80917d478c985f8ef76e2b25558820ea522b
   ZJCommonDefines: 9fd1e19aafb99bc9014e54e665520bb95aa5a22c
   ZJCommonView: e62b96fa97474a99971531e70e5e90c749d90629
   ZJDevice: bfc36b209a264aa5b877a733c6a7cffa856038db
@@ -227,6 +239,7 @@ SPEC CHECKSUMS:
   ZJKeychain: 056dd2cf24a6d44cb41677290742fe46cac94d39
   ZJLocalizable: 3c925ba648064d1da4ddc70c29335d4029fc0445
   ZJLogin: c9c71ab72657787de8e763afc1e0e5f43e9a2763
+  ZJLoginManager: 697de4822a7ff38cf60592faece276d427de9ed7
   ZJRefresh: 2ab367241aea892e43afa57498d07c47f4c38897
   ZJRegion: e077f30a1ebf32398f2e9af9380a7fe1ab4ffc61
   ZJRequest: cbca3f9b01504851babe3d409121abe1e9560f1b

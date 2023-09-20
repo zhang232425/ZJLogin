@@ -16,6 +16,10 @@ final class RegisterViewModel: InputChecker {
     private(set) var registerCaptcha: Action<(account: String,
                                               imageCaptcha: String?), Request.getCaptcha.Result>!
     
+    private(set) var registerAction: Action<(agreementChecked: Bool,
+                                             account: String,
+                                             captcha: String), Request.account.RegisterResult>!
+    
     init() {
         
         registerTipsAction = .init(workFactory: { _ in
@@ -49,6 +53,40 @@ final class RegisterViewModel: InputChecker {
             
         })
         
+        registerAction = .init(workFactory: { [weak self] input -> Single<Request.account.RegisterResult> in
+            
+            if !input.agreementChecked {
+                return .error(InputError.agreementNotChecked)
+            }
+            
+            if let error = self?.checkAccountInputError(input.account) {
+                return .error(error)
+            }
+            
+            if let error = self?.checkAccountInputError(input.captcha) {
+                return .error(error)
+            }
+            
+            return Request.account.register(account: input.account, captha: input.captcha)
+            
+        })
+        
+    }
+    
+}
+
+private enum InputError: LocalizedError {
+    
+    case agreementNotChecked
+    case referralCodeEmpty
+    
+    var errorDescription: String? {
+        switch self {
+        case .agreementNotChecked:
+            return Locale.makeSureApprovedTerms.localized
+        case .referralCodeEmpty:
+            return Locale.enterVerficationCode.localized
+        }
     }
     
 }

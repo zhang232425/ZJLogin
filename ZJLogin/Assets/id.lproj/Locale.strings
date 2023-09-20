@@ -20,6 +20,11 @@
 "phoneCountError" = "Nomor handphone harus 10-13 angka";
 "phonePrefixError" = "Nomor handphone harus dimulai dengan 08";
 
+"captchaEmpty" = "Mohon masukkan kode verifikasi.";
+"agreementEmpty" = "Mohon pastikan Anda telah membaca dan menyetujui Syarat dan Ketentuan Pinjam Meminjam AsetKu dan Kebijakan Privasi Asetku.";
+"enterReferralCode" = "Masukkan kode referral";
+"makeSureApprovedTerms" = "Mohon pastikan Anda telah membaca dan menyetujui syarat dan ketentuan";
+
 /// 登录
 "login" = "Login";
 

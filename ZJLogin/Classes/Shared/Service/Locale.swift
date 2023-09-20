@@ -21,6 +21,8 @@ enum Locale: String {
     case login
     case phoneCountError
     case phonePrefixError
+    case makeSureApprovedTerms
+    case enterReferralCode
     
 }
 

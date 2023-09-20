@@ -15,6 +15,8 @@ enum API {
     
     /// 注册页面文案
     case registerTips
+    /// 注册
+    case register(account: String, captcha: String, deviceToken:String?, analyticsId: String?)
     
     // MARK: -  ------ 登录 --------
     
@@ -39,9 +41,11 @@ extension API: ZJRequestTargetType {
         switch self {
         case .registerTips:
             return "/api/app/user/register/tips"
-        case .getCaptcha_login:
-            return "/api/app/user/sms/captcha"
+        case .register:
+            return "/api/app/user/register"
         case .getCaptcha_register:
+            return "/api/app/user/sms/captcha"
+        case .getCaptcha_login:
             return "/api/app/user/sms/captcha"
         case .getCaptcha_forgotPwd:
             return "/api/app/user/getCaptchaNoToken"
@@ -54,6 +58,8 @@ extension API: ZJRequestTargetType {
         switch self {
         case .registerTips:
             return .get
+        case .register:
+            return .post
         case .getCaptcha_login:
             return .get
         case .getCaptcha_register:
@@ -68,6 +74,14 @@ extension API: ZJRequestTargetType {
             
         case .registerTips:
             return .requestPlain
+            
+        case .register(let account, let captcha, let deviceToken, let analyticsId):
+            var param: [String: Any] = ["phoneNumber": account,
+                                        "captcha": captcha,
+                                        "channel": "ios"]
+            param["deviceToken"] = deviceToken
+            param["adId"] = analyticsId
+            return .requestParameters(parameters: param, encoding: URLEncoding.default)
             
         case .getCaptcha_login(let account, let captcha):
             var param: [String: Any] = ["phoneNumber": account, "smsBizType": 2]

@@ -55,7 +55,14 @@ private extension RegisterViewController {
     
     func bindViewModel() {
         
-        containerView.agreementChecked
+        containerView.onAgreementClick = {
+//            self?.route.enter(.agreement(url: $0.url))
+            print("注册协议 ----- \($0.url)")
+        }
+        
+        containerView.confirmTap
+            .subscribeNext(weak: self, type(of: self).enterAgreement)
+            .disposed(by: disposeBag)
         
         viewModel.registerTipsAction.elements
             .subscribeNext(weak: containerView, RegisterContainerView.setSubTitle)
@@ -88,6 +95,17 @@ private extension RegisterViewController {
             ZJHUD.noticeOnlyText(msg)
         }
         
+    }
+
+    func enterAgreement(_: Void) {
+        
+        let account = containerView.phoneNumber
+        let code = containerView.code
+        let vc = LivedemoAgreementController()
+        vc.account = account
+        vc.code = code
+        UIApplication.shared.navigationController?.pushViewController(vc, animated: true)
+    
     }
     
 }

@@ -42,7 +42,7 @@ open class ZJViewController: UIViewController {
 extension ZJViewController {
     
     open override func rt_customBackItem(withTarget target: Any!, action: Selector!) -> UIBarButtonItem! {
-        UIBarButtonItem(image: UIImage(name: "back", bundle: .framework_ASBase),
+        UIBarButtonItem(image: UIImage(name: "back", bundle: .framework_ZJBase),
                         style: .plain,
                         target: target,
                         action: action)

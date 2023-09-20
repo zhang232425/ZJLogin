@@ -29,8 +29,18 @@ extension InputChecker {
         
     }
     
+    func checkCodeInputError(_ string: String) -> Swift.Error? {
+        
+        if string.isEmpty {
+            return CodeInputError.empty
+        }
+        
+        return nil
+        
+    }
 
 }
+
 
 private enum AccountInputError: LocalizedError {
     
@@ -51,3 +61,15 @@ private enum AccountInputError: LocalizedError {
     
 }
 
+private enum CodeInputError: LocalizedError {
+    
+    case empty
+    
+    var errorDescription: String? {
+        switch self {
+        case .empty:
+            return Locale.enterVerficationCode.localized
+        }
+    }
+    
+}
