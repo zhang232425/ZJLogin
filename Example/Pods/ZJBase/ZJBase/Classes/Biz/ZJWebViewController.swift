@@ -93,15 +93,6 @@ open class ZJWebViewController: ZJViewController {
         return webView
     }()
     
-    /*
-    private lazy final var configuration: WKWebViewConfiguration = {
-        let configuration = WKWebViewConfiguration()
-        configuration.mediaTypesRequiringUserActionForPlayback = .audio
-        configuration.allowsInlineMediaPlayback = true
-        return configuration
-    }()
-     */
-    
     private let configuration: WKWebViewConfiguration
     
     private lazy final var _progressBar: UIProgressView = {
@@ -152,14 +143,7 @@ open class ZJWebViewController: ZJViewController {
         updateLayout()
     }
     
-    deinit {
-        scriptMessageHandler.removeScriptMessageHandler(for: configuration)
-        webView.removeObserver(self, forKeyPath: String.titleKeyPath)
-        webView.removeObserver(self, forKeyPath: String.estimatedProgressKeyPath)
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    // MARK: KVO
+    // MARK: - KVO
     override open func observeValue(forKeyPath keyPath: String?,
                                     of object: Any?,
                                     change: [NSKeyValueChangeKey : Any]?,
@@ -179,7 +163,14 @@ open class ZJWebViewController: ZJViewController {
         }
         
     }
-
+    
+    deinit {
+        scriptMessageHandler.removeScriptMessageHandler(for: configuration)
+        webView.removeObserver(self, forKeyPath: String.titleKeyPath)
+        webView.removeObserver(self, forKeyPath: String.estimatedProgressKeyPath)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
 }
 
 private extension ZJWebViewController {

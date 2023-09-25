@@ -52,6 +52,19 @@ extension Request.account {
         
     }
     
+    static func inputReferralCode(_ code: String) -> Single<()> {
+    
+        API.inputReferralCode(code: code).rx.request()
+            .mapObject(ZJRequestResult<Any>.self)
+            .flatMap {
+                if !$0.success {
+                    throw RequestError(code: $0.errCode, msg: $0.mappedMsg)
+                }
+                return .just(())
+            }
+        
+    }
+    
 }
 
 

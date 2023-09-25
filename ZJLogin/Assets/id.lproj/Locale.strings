@@ -24,7 +24,30 @@
 "agreementEmpty" = "Mohon pastikan Anda telah membaca dan menyetujui Syarat dan Ketentuan Pinjam Meminjam AsetKu dan Kebijakan Privasi Asetku.";
 "enterReferralCode" = "Masukkan kode referral";
 "makeSureApprovedTerms" = "Mohon pastikan Anda telah membaca dan menyetujui syarat dan ketentuan";
+"accountAlreadyExists" = "Akun %@ sudah ada. Silakan langsung login";
+
+"passwordPlaceholder" = "Masukkan kata sandi login";
+"confirm" = "Konfirmasi";
+
+// 设置密码
+"setLoginPassword" = "Atur Kata Sandi";
+"usePasswordLoginLater" = "Selanjutnya Anda bisa login dengan nomor telepon dan kata sandi Anda";
+"skip" = "Lewati";
+"enterPassword" = "Silakan Masukkan 8-16 Digit Kata Sandi";
+"passwordFormatError" = "The format of the password you set is incorrect. Password must be 8-16 characters";
+"setPasswordSuccessfully" = "Atur kata sandi berhasil";
+"correctPasswordHint" = "Masukkan kata sandi 8-16 karakter, terdiri dari huruf dan angka";
+"correctPasswordToast" = "Kata sandi harus 8-16 karakter, terdiri dari huruf dan angka";
+"passwordTlaceholder" = "Masukkan kata sandi login";
+
+// MARK: - ReferralCodeEnter
+"referralCode" = "Koder referral";
+"referralCodeDescription" = "Masukkan kode referral teman Anda, maka Anda dan teman Anda akan mendapat kupon diskon";
+"referralSkip" = "Lewati";
+"submit" = "Kirim";
+"referralEmpty" = "Silakan masukkan kode referral dari orang lain";
+"success" = "Berhasil";
 
 /// 登录
 "login" = "Login";
-
+"loginNow" = "Login Sekarang";

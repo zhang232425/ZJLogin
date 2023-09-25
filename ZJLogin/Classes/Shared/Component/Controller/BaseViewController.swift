@@ -16,11 +16,17 @@ import ZJBase
 import SnapKit
 import ZJHUD
 
-class BaseViewController: UIViewController {
+class BaseViewController: ZJViewController {
 
     let disposeBag = DisposeBag()
     
     private var hud: ZJHUDView?
+    
+    open override func rt_customBackItem(withTarget target: Any!, action: Selector!) -> UIBarButtonItem! {
+        let item = super.rt_customBackItem(withTarget: target, action: action)
+        item?.tintColor = UIColor.standard.black33
+        return item
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +42,8 @@ class BaseViewController: UIViewController {
 private extension BaseViewController {
     
     func config() {
+        navigationController?.navigationBar.shadowImage = .init()
+        automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = .white
     }
     

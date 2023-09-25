@@ -25,7 +25,11 @@ open class ZJViewController: UIViewController {
         super.init(coder: coder)
         modalPresentationStyle = .fullScreen
     }
-
+    
+    public static func defaultBackImage() -> UIImage? {
+        UIImage(name: "back", bundle: .framework_ZJBase)
+    }
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         rt_disableInteractivePop = false

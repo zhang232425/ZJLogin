@@ -23,6 +23,28 @@ enum Locale: String {
     case phonePrefixError
     case makeSureApprovedTerms
     case enterReferralCode
+    case loginNow
+    case accountAlreadyExists
+    
+    case passwordPlaceholder
+    case confirm
+    
+    case setLoginPassword
+    case usePasswordLoginLater
+    case skip
+    case enterPassword
+    case passwordFormatError
+    case setPasswordSuccessfully
+    case correctPasswordHint
+    case correctPasswordToast
+    case passwordTlaceholder
+    
+    //MARK: - 输入邀请码
+    case referralCode
+    case referralCodeDescription
+    case submit
+    case referralEmpty
+    case success
     
 }
 

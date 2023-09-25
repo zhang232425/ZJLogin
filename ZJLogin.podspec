@@ -44,6 +44,7 @@ Pod::Spec.new do |s|
   s.dependency 'ZJRefresh'
   s.dependency 'ZJCommonDefines'
   s.dependency 'ZJValidator'
+  s.dependency 'ZJModalTransition'
   
   
   

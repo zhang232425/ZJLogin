@@ -45,7 +45,7 @@ class BaseWebViewController: ZJWebViewController {
         super.viewDidLoad()
         progressBar.progressTintColor = UIColor(hexString: "#FFA138")
         view.backgroundColor = .white
-//        displaysWebViewTitle = true
+        displaysWebViewTitle = true
     }
     
 }

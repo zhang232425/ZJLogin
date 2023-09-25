@@ -20,6 +20,9 @@ enum API {
     
     // MARK: -  ------ 登录 --------
     
+    /// 设置字符密码
+    case setStringPassword(password: String, accessToken: String)
+    
     // MARK: - ------- 获取验证码 -------
     /// 获取验证码-登录
     case getCaptcha_login(account: String, imageCaptcha: String?)
@@ -27,6 +30,8 @@ enum API {
     case getCaptcha_register(account: String, imageCaptcha: String?)
     /// 获取验证码-忘记密码
     case getCaptcha_forgotPwd(account: String, imageCaptcha: String?)
+    /// 输入邀请码
+    case inputReferralCode(code: String)
     
     
 }
@@ -35,7 +40,23 @@ extension API: ZJRequestTargetType {
     
     var baseURL: URL { URL(string: ZJUrl.server)! }
     
-    var headers: [String : String]? { nil }
+    var headers: [String : String]? {
+        switch self {
+        case .setStringPassword(_, let accessToken):
+            return ["Authorization": accessToken]
+        default:
+            return nil
+        }
+    }
+    
+    /**
+     switch self {
+     case .setStringPassword(_, let token):
+         return ["Authorization": token]
+     default:
+         return nil
+     }
+     */
     
     var path: String {
         switch self {
@@ -50,6 +71,11 @@ extension API: ZJRequestTargetType {
         case .getCaptcha_forgotPwd:
             return "/api/app/user/getCaptchaNoToken"
             
+        case .setStringPassword:
+            return "/api/app/user/setLoginPassword"
+        case .inputReferralCode:
+            return "/api/app/user/setReferrer"
+        
             
         }
     }
@@ -66,6 +92,12 @@ extension API: ZJRequestTargetType {
             return .get
         case .getCaptcha_forgotPwd:
             return .get
+            
+        case .setStringPassword:
+            return .post
+        case .inputReferralCode:
+            return .post
+            
         }
     }
     
@@ -76,27 +108,35 @@ extension API: ZJRequestTargetType {
             return .requestPlain
             
         case .register(let account, let captcha, let deviceToken, let analyticsId):
-            var param: [String: Any] = ["phoneNumber": account,
+            var params: [String: Any] = ["phoneNumber": account,
                                         "captcha": captcha,
                                         "channel": "ios"]
-            param["deviceToken"] = deviceToken
-            param["adId"] = analyticsId
-            return .requestParameters(parameters: param, encoding: URLEncoding.default)
+            params["deviceToken"] = deviceToken
+            params["adId"] = analyticsId
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
             
         case .getCaptcha_login(let account, let captcha):
-            var param: [String: Any] = ["phoneNumber": account, "smsBizType": 2]
-            param["imageCaptcha"] = captcha
-            return .requestParameters(parameters: param, encoding: URLEncoding.default)
+            var params: [String: Any] = ["phoneNumber": account, "smsBizType": 2]
+            params["imageCaptcha"] = captcha
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
             
         case .getCaptcha_register(let account, let captcha):
-            var param: [String: Any] = ["phoneNumber": account, "smsBizType": 1]
-            param["imageCaptcha"] = captcha
-            return .requestParameters(parameters: param, encoding: URLEncoding.default)
+            var params: [String: Any] = ["phoneNumber": account, "smsBizType": 1]
+            params["imageCaptcha"] = captcha
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
             
         case .getCaptcha_forgotPwd(let account, let captcha):
-            var param: [String: Any] = ["phoneNumber": account]
-            param["imageCaptcha"] = captcha
-            return .requestParameters(parameters: param, encoding: URLEncoding.default)
+            var params: [String: Any] = ["phoneNumber": account]
+            params["imageCaptcha"] = captcha
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            
+        case .setStringPassword(let password, _):
+            let params: [String: Any] = ["password": password]
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            
+        case .inputReferralCode(let code):
+            let params: [String: Any] = ["referrerCode": code]
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
             
         }
     }
@@ -106,3 +146,4 @@ extension API: ZJRequestTargetType {
     
     
 }
+

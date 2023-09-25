@@ -27,6 +27,7 @@ class LivedemoAgreementController: BaseWebViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerJS()
+        bindViewModel()
     }
     
 }
@@ -68,9 +69,9 @@ private extension LivedemoAgreementController {
         
         switch result {
         case .success(let token):
-            print("token ===== \(token)")
+            route.enter(.initPassword(account: account, accessToken: token))
         case .accountExists:
-            print("该账号已经注册")
+            route.present(.duplicatedAccount(account: account, smsCode: code))
         case .bizError(let msg):
             ZJHUD.noticeOnlyText(msg)
         case .codeError(let msg):
@@ -81,20 +82,4 @@ private extension LivedemoAgreementController {
     
 }
 
-/**
- private func onRegisterResult(_ result: RxRequest.account.RegisterResult) {
-     
-     switch result {
-     case .success(let token):
-         enterInitPassword(token: token)
-     case .accountExists:
-         route.present(.duplicatedAccount(account: account, smsCode: smsCode))
-     case .bizError(let msg):
-         ASHUD.noticeOnlyText(msg)
-     case .smsCodeError(let msg):
-         ASHUD.noticeOnlyText(msg)
-         ReportEvent.onSMSCodeInputError.report()
-     }
- }
- */
 

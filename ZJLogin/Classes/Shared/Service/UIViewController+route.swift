@@ -23,3 +23,100 @@ protocol Routable {
 extension Routable {
     var route: Route<Self> { Route(self) }
 }
+
+enum PageRouteTarget {
+    case login(completion: (() -> Void)?)
+    case register
+    case initGesture(password: String, loginCompletion: (() -> Void)?)
+    case agreement(url: URL)
+    case forgotPassword
+    case initPassword(account: String, accessToken: String)
+    case setPassword(accessToken: String, onSuccess: (String) -> Void, onSkip: ()-> ())
+    case resetPassword(account: String, captcha: String)
+    case setReferralcode
+}
+
+enum AlertRouteTarget {
+    case imageCaptch(account: String, onConfirm: (String) -> Void)
+    case smsCaptcha(account: String, onConfirm: (String) -> Void)
+    case newRegistration(account: String, captcha: String)
+    case duplicatedAccount(account: String, smsCode: String)
+}
+
+extension UIViewController: Routable {}
+
+extension Route where Base: UIViewController {
+    
+    func enter(_ target: PageRouteTarget) {
+        UIApplication.shared.enter(target)
+    }
+    
+    func present(_ target: AlertRouteTarget) {
+        UIApplication.shared.present(target)
+    }
+    
+}
+
+private extension UIApplication {
+    
+    func enter(_ target: PageRouteTarget) {
+        
+        switch target {
+        case .login(let completion):
+            print("登录")
+            
+        case .register:
+            print("注册")
+            
+        case .initGesture(let password, let loginCompletion):
+            print("设置手势密码")
+            
+        case .agreement(let url):
+            print("同意协议")
+            
+        case .forgotPassword:
+            print("忘记密码")
+            
+        case .initPassword(let account, let accessToken):
+            if let nav = topViewController?.navigationController {
+                let vc = InitPasswordController(account: account, accessToken: accessToken)
+                nav.pushViewController(vc, animated: true)
+            }
+            
+        case .setPassword(let accessToken, let onSuccess, let onSkip):
+            print("设置密码")
+            
+        case .resetPassword(let account, let captcha):
+            print("重置密码")
+            
+        case .setReferralcode:
+            
+            if let nav = topViewController?.navigationController {
+                let vc = SetReferralcodeController()
+                nav.pushViewController(vc, animated: true)
+            }
+            
+        }
+        
+    }
+    
+    func present(_ target: AlertRouteTarget) {
+        
+        
+        guard let topvc = topViewController else { return }
+        
+        switch target {
+        case .imageCaptch(let account, let onConfirm):
+            print("imageCaptch")
+        case .smsCaptcha(let account, let onConfirm):
+            print("smsCaptcha")
+        case .newRegistration(let account, let captcha):
+            print("newRegistration")
+        case .duplicatedAccount(let account, let smsCode):
+            let vc = DuplicatedAccountAlertController(account: account, smsCode: smsCode)
+            topvc.present(vc, animated: true)
+        }
+        
+    }
+    
+}

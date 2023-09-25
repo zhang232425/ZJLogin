@@ -24,7 +24,31 @@
 "agreementEmpty" = "Please make sure you have read and agree to TnC Lending and Borrowing AsetKu and Asetku Privacy Policy.";
 "enterReferralCode" = "Please enter the invitation code";
 "makeSureApprovedTerms" = "Please make sure you have read and approved the terms and regulations";
+"accountAlreadyExists" = "The account %@ is already exists, please log in directly.";
+
+"passwordPlaceholder" = "Enter login password";
+"confirm" = "Confirm";
+
+// 设置密码
+"setLoginPassword" = "Set login password";
+"usePasswordLoginLater" = "You can log in with your phone number and password later";
+"skip" = "Skip";
+"enterPassword" = "Please enter 8-16 digits password";
+"passwordFormatError" = "The format of the password you set is incorrect. Password must be 8-16 characters";
+"setPasswordSuccessfully" = "Set password successfully";
+"correctPasswordHint" = "Enter a password of 8-16 characters, including letters and numbers";
+"correctPasswordToast" = "Password must be 8-16 characters, including letters and numbers";
+"passwordTlaceholder" = "Enter login password";
+
+// MARK: - ReferralCodeEnter
+"referralCode" = "Referral Code";
+"referralCodeDescription" = "Enter the referral code of your friend, then both you and your friends will get discount coupons";
+"referralSkip" = "Skip";
+"submit" = "Submit";
+"referralEmpty" = "Please enter the referral code of your friend";
+"success" = "Successfully";
 
 /// 登录
 "login" = "Login";
+"loginNow" = "Login Now";
 

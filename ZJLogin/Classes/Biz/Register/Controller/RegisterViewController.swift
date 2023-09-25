@@ -7,6 +7,7 @@
 
 import UIKit
 import ZJHUD
+import ZJExtension
 
 class RegisterViewController: BaseViewController {
     
@@ -55,9 +56,8 @@ private extension RegisterViewController {
     
     func bindViewModel() {
         
-        containerView.onAgreementClick = {
-//            self?.route.enter(.agreement(url: $0.url))
-            print("注册协议 ----- \($0.url)")
+        containerView.onAgreementClick = { [weak self] in
+            self?.route.enter(.agreement(url: $0.url))
         }
         
         containerView.confirmTap
@@ -105,7 +105,11 @@ private extension RegisterViewController {
         vc.account = account
         vc.code = code
         UIApplication.shared.navigationController?.pushViewController(vc, animated: true)
-    
+        
+//        let vc = InitPasswordController(account: "0812300000000", accessToken: "12123821789e782732272323")
+//        let vc = SetReferralcodeController()
+//        UIApplication.shared.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }

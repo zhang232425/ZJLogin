@@ -19,6 +19,8 @@ final class RegisterViewModel: InputChecker {
     private(set) var registerAction: Action<(agreementChecked: Bool,
                                              account: String,
                                              captcha: String), Request.account.RegisterResult>!
+        
+    private(set) var setReferralCode: Action<String, Void>!
     
     init() {
         
@@ -63,11 +65,21 @@ final class RegisterViewModel: InputChecker {
                 return .error(error)
             }
             
-            if let error = self?.checkAccountInputError(input.captcha) {
+            if let error = self?.checkCodeInputError(input.captcha) {
                 return .error(error)
             }
             
             return Request.account.register(account: input.account, captha: input.captcha)
+            
+        })
+        
+        setReferralCode = .init(workFactory: { input -> Single<Void> in
+            
+            if input.isEmpty {
+                return .error(InputError.referralCodeEmpty)
+            }
+            
+            return Request.account.inputReferralCode(input)
             
         })
         
