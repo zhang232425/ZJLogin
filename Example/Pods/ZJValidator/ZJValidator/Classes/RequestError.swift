@@ -142,7 +142,7 @@ extension RequestError: ZJLocalizable {
 extension Bundle {
     
     static var framework_ZJValidator: Bundle {
-        let frameworkName = "ASValidator"
+        let frameworkName = "ZJValidator"
         let resourcePath: NSString = .init(string: Bundle(for: ZJValidatorClass.self).resourcePath ?? "")
         let path = resourcePath.appendingPathComponent("/\(frameworkName).bundle")
         return Bundle(path: path)!

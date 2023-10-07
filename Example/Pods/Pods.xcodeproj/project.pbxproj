@@ -935,7 +935,7 @@
 		46EB2E00009C50 /* Locale.strings in Resources */ = {isa = PBXBuildFile; fileRef = 46EB2E00003EC0 /* Locale.strings */; };
 		46EB2E00009C60 /* ZJLogin.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46EB2E00003EF0 /* ZJLogin.xcassets */; };
 		46EB2E00009C90 /* DuplicatedAccountAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000037E0 /* DuplicatedAccountAlertController.swift */; };
-		46EB2E00009CA0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00003810 /* LoginViewController.swift */; };
+		46EB2E00009CA0 /* LoginContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00003810 /* LoginContainerController.swift */; };
 		46EB2E00009CB0 /* InitPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00003840 /* InitPasswordController.swift */; };
 		46EB2E00009CC0 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00003860 /* PasswordViewModel.swift */; };
 		46EB2E00009CD0 /* LivedemoAgreementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00003890 /* LivedemoAgreementController.swift */; };
@@ -1054,8 +1054,14 @@
 		46EB2E0000BC20 /* ZJLocalizable-ZJLocalizable in Resources */ = {isa = PBXBuildFile; fileRef = FD2B9CAB2A6596FC35F6B611E5F42FD6 /* ZJLocalizable-ZJLocalizable */; };
 		46EB2E0000BFD0 /* ZJRegion-ZJRegion in Resources */ = {isa = PBXBuildFile; fileRef = 61706C52A722C7072ECE7CDEB5156231 /* ZJRegion-ZJRegion */; };
 		46EB2E0000C160 /* ZJValidator-ZJValidator in Resources */ = {isa = PBXBuildFile; fileRef = FA08430103907551C394D3F177B69783 /* ZJValidator-ZJValidator */; };
+		D6DB0C642AC28332002CBD89 /* PasswordLoginContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DB0C632AC28332002CBD89 /* PasswordLoginContainerView.swift */; };
+		D6DB0C662AC2834E002CBD89 /* CodeLoginContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DB0C652AC2834E002CBD89 /* CodeLoginContainerView.swift */; };
+		D6DB0C682AC2D269002CBD89 /* Request+login.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DB0C672AC2D269002CBD89 /* Request+login.swift */; };
 		D6E44BA52AC16A9100FE8EC1 /* ZJLoginModule+register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E44BA42AC16A9100FE8EC1 /* ZJLoginModule+register.swift */; };
 		D6E44BA72AC175D700FE8EC1 /* SetReferralcodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E44BA62AC175D700FE8EC1 /* SetReferralcodeController.swift */; };
+		D6E44BA92AC1A1D000FE8EC1 /* PasswordLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E44BA82AC1A1D000FE8EC1 /* PasswordLoginController.swift */; };
+		D6E44BAB2AC1A1EB00FE8EC1 /* CodeLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E44BAA2AC1A1EB00FE8EC1 /* CodeLoginController.swift */; };
+		D6E44BAE2AC1A6DD00FE8EC1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E44BAD2AC1A6DD00FE8EC1 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2693,7 +2699,7 @@
 		46EB2E00003790 /* ZJLocalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJLocalizable.swift; path = ZJLocalizable/Classes/ZJLocalizable.swift; sourceTree = "<group>"; };
 		46EB2E000037A0 /* ZJLocalizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZJLocalizer.swift; path = ZJLocalizable/Classes/ZJLocalizer.swift; sourceTree = "<group>"; };
 		46EB2E000037E0 /* DuplicatedAccountAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DuplicatedAccountAlertController.swift; sourceTree = "<group>"; };
-		46EB2E00003810 /* LoginViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		46EB2E00003810 /* LoginContainerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginContainerController.swift; sourceTree = "<group>"; };
 		46EB2E00003840 /* InitPasswordController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InitPasswordController.swift; sourceTree = "<group>"; };
 		46EB2E00003860 /* PasswordViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		46EB2E00003890 /* LivedemoAgreementController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LivedemoAgreementController.swift; sourceTree = "<group>"; };
@@ -3112,8 +3118,14 @@
 		CD54121DDA84872534168702B5F92950 /* HandyJSON */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HandyJSON; path = HandyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD63405120225602F8DF676BC778C745 /* ZJRequest-ZJRequest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "ZJRequest-ZJRequest"; path = ZJRequest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28763E37EDD385B2F7D6DE39F447784 /* ZJLocalizable */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJLocalizable; path = ZJLocalizable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6DB0C632AC28332002CBD89 /* PasswordLoginContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLoginContainerView.swift; sourceTree = "<group>"; };
+		D6DB0C652AC2834E002CBD89 /* CodeLoginContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginContainerView.swift; sourceTree = "<group>"; };
+		D6DB0C672AC2D269002CBD89 /* Request+login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+login.swift"; sourceTree = "<group>"; };
 		D6E44BA42AC16A9100FE8EC1 /* ZJLoginModule+register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZJLoginModule+register.swift"; sourceTree = "<group>"; };
 		D6E44BA62AC175D700FE8EC1 /* SetReferralcodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReferralcodeController.swift; sourceTree = "<group>"; };
+		D6E44BA82AC1A1D000FE8EC1 /* PasswordLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLoginController.swift; sourceTree = "<group>"; };
+		D6E44BAA2AC1A1EB00FE8EC1 /* CodeLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLoginController.swift; sourceTree = "<group>"; };
+		D6E44BAD2AC1A6DD00FE8EC1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C5BC805E4D0610414D6D3C234F2DDB /* ZJRequest */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJRequest; path = ZJRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E930AB7584A69BE7DA9C0E05191A0E53 /* ZJRefresh */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJRefresh; path = ZJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4959,6 +4971,8 @@
 		46EB2E000037F0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D6DB0C602AC282E2002CBD89 /* View */,
+				D6E44BAC2AC1A6CB00FE8EC1 /* ViewModel */,
 				46EB2E00003800 /* Controller */,
 			);
 			path = Login;
@@ -4967,7 +4981,9 @@
 		46EB2E00003800 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E00003810 /* LoginViewController.swift */,
+				46EB2E00003810 /* LoginContainerController.swift */,
+				D6E44BA82AC1A1D000FE8EC1 /* PasswordLoginController.swift */,
+				D6E44BAA2AC1A1EB00FE8EC1 /* CodeLoginController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -5128,6 +5144,7 @@
 				46EB2E00003AF0 /* API.swift */,
 				46EB2E00003B00 /* Locale.swift */,
 				46EB2E00003B40 /* Request.swift */,
+				D6DB0C672AC2D269002CBD89 /* Request+login.swift */,
 				46EB2E00003B10 /* Request+account.swift */,
 				46EB2E00003B20 /* Request+getCaptcha.swift */,
 				46EB2E00003B30 /* Request+password.swift */,
@@ -5811,6 +5828,23 @@
 			);
 			name = "Pods-ZJLogin_Example";
 			path = "Target Support Files/Pods-ZJLogin_Example";
+			sourceTree = "<group>";
+		};
+		D6DB0C602AC282E2002CBD89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6DB0C632AC28332002CBD89 /* PasswordLoginContainerView.swift */,
+				D6DB0C652AC2834E002CBD89 /* CodeLoginContainerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6E44BAC2AC1A6CB00FE8EC1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D6E44BAD2AC1A6DD00FE8EC1 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -8781,6 +8815,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6E44BAE2AC1A6DD00FE8EC1 /* LoginViewModel.swift in Sources */,
+				D6E44BA92AC1A1D000FE8EC1 /* PasswordLoginController.swift in Sources */,
 				46EB2E00009CF0 /* Agreement.swift in Sources */,
 				46EB2E00009DB0 /* AgreementCheckButton.swift in Sources */,
 				46EB2E00009E80 /* API.swift in Sources */,
@@ -8788,6 +8824,7 @@
 				46EB2E00009DC0 /* BaseView.swift in Sources */,
 				46EB2E00009D90 /* BaseViewController.swift in Sources */,
 				46EB2E00009DA0 /* BaseWebViewController.swift in Sources */,
+				D6DB0C662AC2834E002CBD89 /* CodeLoginContainerView.swift in Sources */,
 				46EB2E00009D40 /* Bundle+Extension.swift in Sources */,
 				46EB2E00009DD0 /* CodeField.swift in Sources */,
 				46EB2E00009DE0 /* CountdownButton.swift in Sources */,
@@ -8798,14 +8835,16 @@
 				46EB2E00009E70 /* InputChecker.swift in Sources */,
 				46EB2E00009CD0 /* LivedemoAgreementController.swift in Sources */,
 				46EB2E00009E90 /* Locale.swift in Sources */,
-				46EB2E00009CA0 /* LoginViewController.swift in Sources */,
+				46EB2E00009CA0 /* LoginContainerController.swift in Sources */,
 				46EB2E00009E50 /* Namespace.swift in Sources */,
 				46EB2E00009DF0 /* OJKLogoView.swift in Sources */,
 				46EB2E00009E00 /* PageCommonTitleView.swift in Sources */,
 				46EB2E00009E10 /* PageMainButton.swift in Sources */,
+				D6E44BAB2AC1A1EB00FE8EC1 /* CodeLoginController.swift in Sources */,
 				46EB2E00009E20 /* PasswordField.swift in Sources */,
 				46EB2E00009CC0 /* PasswordViewModel.swift in Sources */,
 				46EB2E00009E30 /* PhoneNumberField.swift in Sources */,
+				D6DB0C682AC2D269002CBD89 /* Request+login.swift in Sources */,
 				46EB2E00009D10 /* RegisterContainerView.swift in Sources */,
 				46EB2E00009D00 /* RegisterTipsModel.swift in Sources */,
 				46EB2E00009CE0 /* RegisterViewController.swift in Sources */,
@@ -8817,6 +8856,7 @@
 				46EB2E00009D50 /* String+Extension.swift in Sources */,
 				46EB2E00009D60 /* UIBarButtonItem+Extension.swift in Sources */,
 				D6E44BA72AC175D700FE8EC1 /* SetReferralcodeController.swift in Sources */,
+				D6DB0C642AC28332002CBD89 /* PasswordLoginContainerView.swift in Sources */,
 				46EB2E00009D70 /* UIColor+Extension.swift in Sources */,
 				46EB2E00009D80 /* UIImage+Extension.swift in Sources */,
 				46EB2E00009EE0 /* UIViewController+route.swift in Sources */,

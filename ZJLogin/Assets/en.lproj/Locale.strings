@@ -52,3 +52,19 @@
 "login" = "Login";
 "loginNow" = "Login Now";
 
+//MARK: - 密码登录
+"loginWithPassword" = "Log In with Password";
+"welcomeToAsetku" = "Welcome to Asetku";
+"enterLoginPwd" = "Please enter your login password";
+"forgotPassword" = "Forgot Password";
+"loginWithCode" = "Log In with SMS";
+"accountNotExistOrPasswordWrong" = "Account does not exist or incorrect password";
+"loginSuccessful" = "Login Successful";
+"ok" = "OK";
+"accountFrozenNotice" = "Your Account has been disabled. If you have any questions, please contact customer service.";
+"accountFrozenPhonePrefix" = "Customer service phone number：";
+"iKnow" = "I already know";
+"phoneCopied" = "Phone number copied";
+"frozenTitle" = "Account isn’t Active";
+
+

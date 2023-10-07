@@ -51,3 +51,18 @@
 /// 登录
 "login" = "Login";
 "loginNow" = "Login Sekarang";
+
+//MARK: - 密码登录
+"loginWithPassword" = "Login dengan Kata Sandi";
+"welcomeToAsetku" = "Selamat Datang di Asetku";
+"enterLoginPwd" = "Silakan masukkan kata sandi login Anda";
+"forgotPassword" = "Lupa Kata sandi?";
+"loginWithCode" = "Login dengan SMS OTP";
+"accountNotExistOrPasswordWrong" = "Tidak ada akun ini atau kata sandi salah";
+"loginSuccessful" = "Berhasil Login";
+"ok" = "Konfirmasi";
+"accountFrozenNotice" = "Akun kamu telah dinonaktifkan. Jika ada pertanyaan silakan hubungi";
+"accountFrozenPhonePrefix" = "customer service di：";
+"iKnow" = "Saya Mengerti";
+"phoneCopied" = "Nomor telepon disalin";
+"frozenTitle" = "Akun Tidak Aktif";

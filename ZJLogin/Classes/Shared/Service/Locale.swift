@@ -46,6 +46,21 @@ enum Locale: String {
     case referralEmpty
     case success
     
+    //MARK: - 密码登录
+    case loginWithPassword
+    case welcomeToAsetku
+    case enterLoginPwd
+    case forgotPassword
+    case loginWithCode
+    case accountNotExistOrPasswordWrong
+    case loginSuccessful
+    case ok
+    case accountFrozenNotice
+    case accountFrozenPhonePrefix
+    case iKnow
+    case phoneCopied
+    case frozenTitle
+        
 }
 
 extension Locale: ZJLocalizable {

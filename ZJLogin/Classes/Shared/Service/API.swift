@@ -19,6 +19,10 @@ enum API {
     case register(account: String, captcha: String, deviceToken:String?, analyticsId: String?)
     
     // MARK: -  ------ 登录 --------
+    /// 密码登录
+    case loginByPassword(account: String, password: String, captcha: String?)
+    /// 短验登录
+    case loginBySMSCode(account: String, smsCode: String)
     
     /// 设置字符密码
     case setStringPassword(password: String, accessToken: String)
@@ -48,16 +52,7 @@ extension API: ZJRequestTargetType {
             return nil
         }
     }
-    
-    /**
-     switch self {
-     case .setStringPassword(_, let token):
-         return ["Authorization": token]
-     default:
-         return nil
-     }
-     */
-    
+
     var path: String {
         switch self {
         case .registerTips:
@@ -75,6 +70,12 @@ extension API: ZJRequestTargetType {
             return "/api/app/user/setLoginPassword"
         case .inputReferralCode:
             return "/api/app/user/setReferrer"
+            
+        // 登录
+        case .loginByPassword, .loginBySMSCode:
+            return "/api/app/user/login"
+            
+        
         
             
         }
@@ -96,6 +97,9 @@ extension API: ZJRequestTargetType {
         case .setStringPassword:
             return .post
         case .inputReferralCode:
+            return .post
+        
+        case .loginByPassword, .loginBySMSCode:
             return .post
             
         }
@@ -138,12 +142,26 @@ extension API: ZJRequestTargetType {
             let params: [String: Any] = ["referrerCode": code]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
             
+        case .loginByPassword(let account, let password, let captcha):
+            var params: [String: Any] = ["phoneNumber": account,
+                                         "password": password,
+                                         "passwordType": 1]
+            params["captcha"] = captcha
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            
+        case .loginBySMSCode(let account, let smsCode):
+            let params: [String: Any] = ["phoneNumber": account,
+                                        "password": smsCode,
+                                        "passwordType": 3]
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            
+            
         }
     }
     
     var sampleData: Data { ".".data(using: .utf8)! }
     
     
-    
 }
+
 

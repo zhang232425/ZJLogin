@@ -68,7 +68,7 @@ private extension RegisterContainerView {
             $0.left.right.equalToSuperview().inset(20.auto)
             $0.height.equalTo(50.auto)
         }
-        
+            
         codeField.add(to: containerView).snp.makeConstraints {
             $0.top.equalTo(phoneField.snp.bottom).offset(30.auto)
             $0.left.right.height.equalTo(phoneField)

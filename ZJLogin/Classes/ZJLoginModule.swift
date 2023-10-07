@@ -15,7 +15,7 @@ public struct ZJLoginModule: ZJModule {
     public func initialize() {
         
         ZJLoginRoutableTarget.register(path: ZJLoginRoutePath.login) { _ in
-            return LoginViewController()
+            return LoginContainerController()
         }
         
         ZJRouter.register(path: ZJLoginRoutePath.register) { _ in
@@ -23,8 +23,6 @@ public struct ZJLoginModule: ZJModule {
         }
         
     }
-    
-    
-    
+        
     
 }
