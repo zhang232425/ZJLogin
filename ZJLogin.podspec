@@ -45,6 +45,7 @@ Pod::Spec.new do |s|
   s.dependency 'ZJCommonDefines'
   s.dependency 'ZJValidator'
   s.dependency 'ZJModalTransition'
+  s.dependency 'ZJLocalAuth'
   
   
   

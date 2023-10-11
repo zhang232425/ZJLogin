@@ -67,6 +67,9 @@ PODS:
     - ZJExtension
   - ZJKeychain (0.1.0):
     - KeychainSwift
+  - ZJLocalAuth (0.1.0):
+    - DeviceKit
+    - ZJKeychain
   - ZJLocalizable (0.1.0)
   - ZJLogin (0.1.0):
     - Action
@@ -81,6 +84,7 @@ PODS:
     - ZJCommonView
     - ZJExtension
     - ZJHUD
+    - ZJLocalAuth
     - ZJLocalizable
     - ZJModalTransition
     - ZJRefresh
@@ -132,6 +136,7 @@ SPEC REPOS:
     - ZJDevice
     - ZJHUD
     - ZJKeychain
+    - ZJLocalAuth
     - ZJLocalizable
     - ZJLoginManager
     - ZJModalTransition
@@ -241,8 +246,9 @@ SPEC CHECKSUMS:
   ZJExtension: 696a53ccf69ba7171693e4c370d2672a62a4dfd9
   ZJHUD: d5ca2144a62af4331f7f58386f5e4fbc5f5b2d01
   ZJKeychain: 056dd2cf24a6d44cb41677290742fe46cac94d39
+  ZJLocalAuth: f6c3dea981bd77ff858f928c19e67ae0973d9236
   ZJLocalizable: 3c925ba648064d1da4ddc70c29335d4029fc0445
-  ZJLogin: 7c38085f8807afe1c91711d4a4c84bf0aaa28bc8
+  ZJLogin: 6d267f5fed163c78d2aa1772e271910bd0d9b7fd
   ZJLoginManager: 697de4822a7ff38cf60592faece276d427de9ed7
   ZJModalTransition: 1d897c1a648e799713ca6d1bf888a73d1851e7a7
   ZJRefresh: 2ab367241aea892e43afa57498d07c47f4c38897

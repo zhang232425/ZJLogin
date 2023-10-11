@@ -41,9 +41,25 @@ extension Request.login {
                            password: String,
                            captcha: String?) -> Single<Request.login.Result> {
         
-        let r = API.loginByPassword(account: account, password: password, captcha: captcha)
+        let r = API.loginByPassword(account: account, password: password, captcha: captcha).rx.request()
+        return _mapLoginResult(r)
         
-        return _mapLoginResult(r.rx.request())
+    }
+    
+    static func bySMSCode(account: String, smsCode: String) -> Single<Request.login.Result> {
+        
+        let r = API.loginBySMSCode(account: account, smsCode: smsCode).rx.request()
+        return _mapLoginResult(r)
+        
+    }
+    
+    static func getPassword() -> Single<Bool> {
+        
+        API.isSetStringPassword.rx.request()
+            .mapObject(ZJRequestResult<[String: Any]>.self)
+            .map { root -> Bool in
+                (root.data?["hasLoginPassword"] as? Bool) ?? true
+            }
         
     }
     

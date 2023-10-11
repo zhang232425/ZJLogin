@@ -10,6 +10,8 @@ import ZJRoutableTargets
 
 public struct ZJLoginModule: ZJModule {
     
+    static var loginResultRouter: LoginResultRouter?
+    
     public init() {}
     
     public func initialize() {

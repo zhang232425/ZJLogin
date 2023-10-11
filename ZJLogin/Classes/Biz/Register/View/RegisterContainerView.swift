@@ -55,7 +55,6 @@ private extension RegisterContainerView {
         
         containerView.add(to: self).snp.makeConstraints {
             $0.width.edges.equalToSuperview()
-//            $0.height.equalToSuperview()
         }
         
         titleView.add(to: containerView).snp.makeConstraints {

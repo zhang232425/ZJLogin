@@ -60,7 +60,29 @@ enum Locale: String {
     case iKnow
     case phoneCopied
     case frozenTitle
-        
+    
+    //MARK: - 指纹/人脸登录
+    case touchLoginButtonTitle
+    case faceLoginButtonTitle
+    case switchLoginMethod
+    case gestureLoginButtonTitle
+    case passwordLoginButtonTitle
+    case gestureNotyetSetToast
+    
+    case passcodeNotSetToast
+    case biometryLockoutToast
+    case touchIdunavailableToast
+    case faceIdunavailableToast
+    case touchNotEnrolledToast
+    case faceNotEnrolledToast
+    case touchChangedToast
+    case faceChangedToast
+    case touchInvalidToast
+    case faceInvalidToast
+    case touchIdEvaluateReason
+    case faceIdEvaluateReason
+    case evaluationFailToast
+    
 }
 
 extension Locale: ZJLocalizable {

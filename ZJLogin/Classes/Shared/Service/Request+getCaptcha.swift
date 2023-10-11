@@ -26,10 +26,17 @@ extension Request.getCaptcha {
         let r = API.getCaptcha_register(account: account, imageCaptcha: imageCaptcha)
             .rx.request().mapObject(ZJRequestResult<[String: Any]>.self)
         return _mapGetCaptchaResult(r)
+        
     }
     
-    
-    
+    static func onLogin(account: String, imageCaptcha: String?) -> Single<Result> {
+        
+        let r = API.getCaptcha_login(account: account, imageCaptcha: imageCaptcha)
+            .rx.request().mapObject(ZJRequestResult<[String: Any]>.self)
+        return _mapGetCaptchaResult(r)
+        
+    }
+
     static private func _mapGetCaptchaResult(_ r: Single<ZJRequestResult<[String: Any]>>) -> Single<Result> {
         
         return r.map { root -> Result in

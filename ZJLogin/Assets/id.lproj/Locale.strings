@@ -66,3 +66,25 @@
 "iKnow" = "Saya Mengerti";
 "phoneCopied" = "Nomor telepon disalin";
 "frozenTitle" = "Akun Tidak Aktif";
+
+//MARK: - 指纹/人脸登录
+"touchLoginButtonTitle" = "Klik untuk login sidik jari";
+"faceLoginButtonTitle" = "Klik untuk login dengan Face ID";
+"switchLoginMethod" = "Ubah cara login";
+"gestureLoginButtonTitle" = "Login dengan Pola Kunci";
+"passwordLoginButtonTitle" = "Login dengan Kata Sandi";
+"gestureNotyetSetToast" = "Anda belum atur sandi Pola Kunci. Silakan login dengan Kata Sandi";
+
+"passcodeNotSetToast" = "Perangkat belum diatur kata sandi. Silakan aktifkan kata sandi";
+"biometryLockoutToast" = "Jumlah kesalahan terlalu banyak. Silakan coba kembali beberapa saat";
+"touchIdunavailableToast" = "Sidik jari belum diaktifkan, silakan ke pengaturan sistem untuk mengaktifkan sidik jari";
+"faceIdunavailableToast" = "Face ID belum diaktifkan, silakan ke pengaturan sistem untuk mengaktifkan Face ID";
+"touchNotEnrolledToast" = "Sidik jari belum diaktifkan, silakan ke pengaturan sistem untuk mengaktifkan sidik jari";
+"faceNotEnrolledToast" = "Face ID belum diaktifkan, silakan ke pengaturan sistem untuk mengaktifkan Face ID";
+"touchChangedToast" = "Sidik jari telah berubah, harap gunakan cara login lain";
+"faceChangedToast" = "Terjadi perubahan pada Face ID. Silakan gunakan metode login lainnya";
+"touchInvalidToast" = "Login Sidik Jari gagal, harap gunakan cara login lain";
+"faceInvalidToast" = "Face ID gagal. Silakan gunakan metode login lainnya";
+"touchIdEvaluateReason" = "Letakkan jari di sensor sidik jari untuk memverifikasi sidik jari Anda";
+"faceIdEvaluateReason" = "Silakan gunakan Face ID untuk verifikasi identitas Anda";
+"evaluationFailToast" = "Verifikasi gagal. Silakan coba kembali";

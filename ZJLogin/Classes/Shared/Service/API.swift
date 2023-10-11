@@ -12,20 +12,26 @@ import Moya
 enum API {
 
     // MARK: -  ------ 注册 --------
-    
     /// 注册页面文案
     case registerTips
     /// 注册
     case register(account: String, captcha: String, deviceToken:String?, analyticsId: String?)
+    /// 是否设置了字符密码
+    case isSetStringPassword
     
     // MARK: -  ------ 登录 --------
     /// 密码登录
     case loginByPassword(account: String, password: String, captcha: String?)
     /// 短验登录
     case loginBySMSCode(account: String, smsCode: String)
-    
     /// 设置字符密码
     case setStringPassword(password: String, accessToken: String)
+    
+    //// // biometricsType: 1 - 指纹，2 - 人脸
+    /// 获取生物特征信息(TouchId或FaceId)
+    case fetchBiometricInfo(account: String, biometricsType: Int)
+    /// 校验生物特征登录(TouchId或FaceId)
+    case checkBiometrics(account: String, biometricsType: Int, biometricsId: String)
     
     // MARK: - ------- 获取验证码 -------
     /// 获取验证码-登录
@@ -55,6 +61,7 @@ extension API: ZJRequestTargetType {
 
     var path: String {
         switch self {
+            
         case .registerTips:
             return "/api/app/user/register/tips"
         case .register:
@@ -65,6 +72,8 @@ extension API: ZJRequestTargetType {
             return "/api/app/user/sms/captcha"
         case .getCaptcha_forgotPwd:
             return "/api/app/user/getCaptchaNoToken"
+        case .isSetStringPassword:
+            return "/api/app/user/pwd/setting"
             
         case .setStringPassword:
             return "/api/app/user/setLoginPassword"
@@ -74,10 +83,11 @@ extension API: ZJRequestTargetType {
         // 登录
         case .loginByPassword, .loginBySMSCode:
             return "/api/app/user/login"
-            
-        
-        
-            
+        case .fetchBiometricInfo:
+            return "/api/app/user/biometrics/enable"
+        case .checkBiometrics:
+            return "/api/app/user/biometrics/check"
+    
         }
     }
     
@@ -93,6 +103,8 @@ extension API: ZJRequestTargetType {
             return .get
         case .getCaptcha_forgotPwd:
             return .get
+        case .isSetStringPassword:
+            return .get
             
         case .setStringPassword:
             return .post
@@ -100,6 +112,9 @@ extension API: ZJRequestTargetType {
             return .post
         
         case .loginByPassword, .loginBySMSCode:
+            return .post
+            
+        case .checkBiometrics, .fetchBiometricInfo:
             return .post
             
         }
@@ -155,10 +170,24 @@ extension API: ZJRequestTargetType {
                                         "passwordType": 3]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
             
+        case .isSetStringPassword:
+            return .requestPlain
+            
+        case.checkBiometrics(let account, let biometricsType, let biometricsId):
+            let params: [String: Any] = ["phoneNumber": account,
+                                        "biometricsType": biometricsType,
+                                        "biometricsId": biometricsId]
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            
+        case .fetchBiometricInfo(let account, let biometricsType):
+        
+            let params: [String: Any] = ["phoneNumber": account,
+                                        "biometricsType": biometricsType]
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
             
         }
     }
-    
+
     var sampleData: Data { ".".data(using: .utf8)! }
     
     

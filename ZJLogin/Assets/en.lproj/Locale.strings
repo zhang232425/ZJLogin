@@ -67,4 +67,26 @@
 "phoneCopied" = "Phone number copied";
 "frozenTitle" = "Account isn’t Active";
 
+//MARK: - 指纹/人脸登录
+"touchLoginButtonTitle" = "Click for fingerprint login";
+"faceLoginButtonTitle" = "Click to login with Face ID";
+"switchLoginMethod" = "Switch login method";
+"gestureLoginButtonTitle" = "Login with Gesture Password";
+"passwordLoginButtonTitle" = "Login with Password";
+"gestureNotyetSetToast" = "You haven't set a gesture password yet, please login with the password";
+
+"passcodeNotSetToast" = "No password is set for the device, please turn on the password first";
+"biometryLockoutToast" = "Too many incorrect attempts, please try again later";
+"touchIdunavailableToast" = "Fingerprint is off. Please go to system settings to turn on fingerprint.";
+"faceIdunavailableToast" = "Face ID is off. Please go to the system settings to turn on Face ID.";
+"touchNotEnrolledToast" = "Fingerprint is off. Please go to system settings to turn on fingerprint.";
+"faceNotEnrolledToast" = "Face ID is off. Please go to the system settings to turn on Face ID.";
+"touchChangedToast" = "The fingerprint has changed, please use other login methods";
+"faceChangedToast" = "Face ID has changed. Please use another login method";
+"touchInvalidToast" = "The fingerprint is invalid, please use other login methods";
+"faceInvalidToast" = "Face ID is invalid. Please use another login method";
+"touchIdEvaluateReason" = "Put your finger on the device fingerprint recognition area to verify the fingerprint";
+"faceIdEvaluateReason" = "Please use Face ID to verify your identity";
+"evaluationFailToast" = "Verification failed, please try again";
+
 
