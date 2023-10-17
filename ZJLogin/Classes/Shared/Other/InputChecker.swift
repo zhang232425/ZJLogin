@@ -38,6 +38,24 @@ extension InputChecker {
         return nil
         
     }
+    
+    func checkPasswordInputError(_ string: String) -> Swift.Error? {
+        
+        if string.isEmpty {
+            return PasswordInputError.passwordEmpty
+        }
+        
+        if !(8...16).contains(string.count) {
+            return PasswordInputError.passwordFormatError
+        }
+        
+        if !string.dd.isPassword() {
+            return PasswordInputError.passwordCorrentError
+        }
+        
+        return nil
+        
+    }
 
 }
 
@@ -69,6 +87,25 @@ private enum CodeInputError: LocalizedError {
         switch self {
         case .empty:
             return Locale.enterVerficationCode.localized
+        }
+    }
+    
+}
+
+private enum PasswordInputError: LocalizedError {
+    
+    case passwordEmpty
+    case passwordFormatError
+    case passwordCorrentError
+    
+    var errorDescription: String? {
+        switch self {
+        case .passwordEmpty:
+            return Locale.enterPassword.localized
+        case .passwordFormatError:
+            return Locale.passwordFormatError.localized
+        case .passwordCorrentError:
+            return Locale.correctPasswordToast.localized
         }
     }
     

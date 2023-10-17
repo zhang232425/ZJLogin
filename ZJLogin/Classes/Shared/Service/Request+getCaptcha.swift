@@ -36,6 +36,31 @@ extension Request.getCaptcha {
         return _mapGetCaptchaResult(r)
         
     }
+    
+    static func onForgotPwd(account: String, imageCaptcha: String?) -> Single<Result> {
+        
+        return API.getCaptcha_forgotPwd(account: account, imageCaptcha: imageCaptcha)
+            .rx.request().mapObject(ZJRequestResult<String>.self).map { root -> Result in
+                
+                if root.errCode == "CAPTCHA.0001" {
+                    return .needImageCaptcha
+                }
+                
+                if root.errCode == "CAPTCHA.0003" {
+                    return .imageCapthaError(msg: root.mappedMsg)
+                }
+                
+                if root.success {
+                    let captcha = root.data
+                    return .success(code: captcha)
+                } else {
+                    return .bizError(msg: root.mappedMsg)
+                }
+                
+            }
+        
+    }
+    
 
     static private func _mapGetCaptchaResult(_ r: Single<ZJRequestResult<[String: Any]>>) -> Single<Result> {
         

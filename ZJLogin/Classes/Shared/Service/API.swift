@@ -26,6 +26,10 @@ enum API {
     case loginBySMSCode(account: String, smsCode: String)
     /// 设置字符密码
     case setStringPassword(password: String, accessToken: String)
+    /// 校验:忘记密码获取的验证码
+    case checkForgotPasswordCaptcha(account: String, captcha: String)
+    /// 忘记密码后重置密码
+    case resetStringPasswordWhenForgot(account: String, captcha: String, newPasswordMask: String)
     
     //// // biometricsType: 1 - 指纹，2 - 人脸
     /// 获取生物特征信息(TouchId或FaceId)
@@ -80,10 +84,16 @@ extension API: ZJRequestTargetType {
         case .isSetStringPassword:
             return "/api/app/user/pwd/setting"
             
+        case .checkForgotPasswordCaptcha:
+            return "/api/app/user/checkCaptchaForNoToken"
+            
         case .setStringPassword:
             return "/api/app/user/setLoginPassword"
         case .inputReferralCode:
             return "/api/app/user/setReferrer"
+            
+        case .resetStringPasswordWhenForgot:
+            return "/api/app/user/resetLoginPassword"
             
         // 登录
         case .loginByPassword, .loginBySMSCode:
@@ -120,9 +130,15 @@ extension API: ZJRequestTargetType {
         case .isSetStringPassword:
             return .get
             
+        case .checkForgotPasswordCaptcha:
+            return .post
+            
         case .setStringPassword:
             return .post
         case .inputReferralCode:
+            return .post
+            
+        case .resetStringPasswordWhenForgot:
             return .post
         
         case .loginByPassword, .loginBySMSCode:
@@ -218,6 +234,19 @@ extension API: ZJRequestTargetType {
                                          "type": type]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
             
+        case .checkForgotPasswordCaptcha(let account, let captcha):
+            var params: [String: Any] = [:]
+            params["phoneNumber"] = account
+            params["captcha"] = captcha
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            
+        case .resetStringPasswordWhenForgot(let account, let captcha, let newPasswordMask):
+            var params: [String: Any] = [:]
+            params["phoneNumber"] = account
+            params["captcha"] = captcha
+            params["newPassword"] = newPasswordMask
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            
         }
     }
 
@@ -225,5 +254,6 @@ extension API: ZJRequestTargetType {
     
     
 }
+
 
 

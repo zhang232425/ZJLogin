@@ -82,7 +82,10 @@ private extension UIApplication {
             print("同意协议")
             
         case .forgotPassword:
-            print("忘记密码")
+            
+            if let nav = topViewController?.navigationController {
+                nav.pushViewController(ForgotPasswordController(), animated: true)
+            }
             
         case .initPassword(let account, let accessToken):
             if let nav = topViewController?.navigationController {
@@ -94,7 +97,10 @@ private extension UIApplication {
             print("设置密码")
             
         case .resetPassword(let account, let captcha):
-            print("重置密码")
+            
+            if let nav = topViewController?.navigationController {
+                nav.pushViewController(ResetPasswordController(account: account, captcha: captcha), animated: true)
+            }
             
         case .setReferralcode:
             

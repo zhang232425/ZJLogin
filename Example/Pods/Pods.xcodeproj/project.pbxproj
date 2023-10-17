@@ -1072,6 +1072,8 @@
 		46EB2E0000C520 /* ZJValidator-ZJValidator in Resources */ = {isa = PBXBuildFile; fileRef = FA08430103907551C394D3F177B69783 /* ZJValidator-ZJValidator */; };
 		D64E0B8F2ADE236500BA1A4F /* ZJNotification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E0B8E2ADE236500BA1A4F /* ZJNotification+Extension.swift */; };
 		D64E0B912ADE273300BA1A4F /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E0B902ADE273300BA1A4F /* UINavigationController+Extension.swift */; };
+		D64E0B932ADE2EA400BA1A4F /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E0B922ADE2EA400BA1A4F /* ForgotPasswordController.swift */; };
+		D64E0B952ADE7E7E00BA1A4F /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E0B942ADE7E7E00BA1A4F /* ResetPasswordController.swift */; };
 		D66ADF672AD6483900CB32D3 /* GestureSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66ADF662AD6483900CB32D3 /* GestureSetupViewController.swift */; };
 		D66ADF6A2AD687BC00CB32D3 /* GestureIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66ADF692AD687BC00CB32D3 /* GestureIndicator.swift */; };
 		D66ADF6C2AD694F400CB32D3 /* GestureRemindLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66ADF6B2AD694F400CB32D3 /* GestureRemindLabel.swift */; };
@@ -3187,6 +3189,8 @@
 		D28763E37EDD385B2F7D6DE39F447784 /* ZJLocalizable */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJLocalizable; path = ZJLocalizable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64E0B8E2ADE236500BA1A4F /* ZJNotification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZJNotification+Extension.swift"; sourceTree = "<group>"; };
 		D64E0B902ADE273300BA1A4F /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		D64E0B922ADE2EA400BA1A4F /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		D64E0B942ADE7E7E00BA1A4F /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		D66ADF662AD6483900CB32D3 /* GestureSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureSetupViewController.swift; sourceTree = "<group>"; };
 		D66ADF692AD687BC00CB32D3 /* GestureIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureIndicator.swift; sourceTree = "<group>"; };
 		D66ADF6B2AD694F400CB32D3 /* GestureRemindLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRemindLabel.swift; sourceTree = "<group>"; };
@@ -5134,6 +5138,8 @@
 			isa = PBXGroup;
 			children = (
 				46EB2E00003930 /* InitPasswordController.swift */,
+				D64E0B922ADE2EA400BA1A4F /* ForgotPasswordController.swift */,
+				D64E0B942ADE7E7E00BA1A4F /* ResetPasswordController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -9068,10 +9074,12 @@
 				46EB2E0000A120 /* PageMainButton.swift in Sources */,
 				46EB2E0000A130 /* PasswordField.swift in Sources */,
 				46EB2E00009F90 /* PasswordLoginContainerView.swift in Sources */,
+				D64E0B932ADE2EA400BA1A4F /* ForgotPasswordController.swift in Sources */,
 				D66ADF6A2AD687BC00CB32D3 /* GestureIndicator.swift in Sources */,
 				46EB2E00009F60 /* PasswordLoginController.swift in Sources */,
 				46EB2E00009FC0 /* PasswordViewModel.swift in Sources */,
 				46EB2E0000A140 /* PhoneNumberField.swift in Sources */,
+				D64E0B952ADE7E7E00BA1A4F /* ResetPasswordController.swift in Sources */,
 				46EB2E0000A020 /* RegisterContainerView.swift in Sources */,
 				D66ADF672AD6483900CB32D3 /* GestureSetupViewController.swift in Sources */,
 				46EB2E0000A010 /* RegisterTipsModel.swift in Sources */,
