@@ -89,4 +89,36 @@
 "faceIdEvaluateReason" = "Please use Face ID to verify your identity";
 "evaluationFailToast" = "Verification failed, please try again";
 
+// MARK: - Gesture
+"set_password_gesture" = "Set Gesture Password";
+"set_password_login_gesture" = "Set a gesture password to login instantly.";
+"length_error_gesture" = "Password too short. At least 4 dots connected. ";
+"draw_again_gesture" = "Please draw your gesture password again";
+"try_agin_gesture" = "Gesture passwords do not match. Please try again.";
+"login_gesture" = "Gesture Password Login";
+"times_error_gesture" = "Incorrect Password. You can't login with gesture password if password incorrect for 4 more times.";
+"login_move_gesture" = "Login via login password.";
+"enable_gesture" = "Enable Gesture Password";
+"disable_gesture" = "Disable Gesture Password";
+"reset_gesture" = "Reset Gesture Password";
+"gesture_password_gesture" = "Gesture Password";
+"login_verify_gesture" = "Verify Login Password";
+"verify_gesture" = "Verify Gesture Password";
+"disable_move_gesture" = "You can only login via login password after you disable gesture password.";
+"disable_verify_gesture" = "We need to verify your login password to disable gesture password.";
+"enter_gesture" = "Please enter login password.";
+"submit_gesture" = "Submit";
+"enter_verify_gesture" = "Please enter your login password to verify your identity.";
+"login_remind_gesture" = "*You can login instantly after set a gesture password.";
+"login_reset_verify_gesture" = "We need to verify your login password to reset your gesture password.";
+"reset_verify_gesture" = "We need to verify your gesture password to reset your gesture password.";
+"max_times_error_gesture" = "Incorrect password attempts reached 5 times. Please try again after 24 hours.";
+"incorrect_gesture" = "Incorrect Password. Attempts left: %ld.";
+"disable_will_verify_gesture" = "We need to verify your gesture password to disable gesture password.";
+"login_enter_remind_gesture" = "Please enter your login password.";
+"enter_remind_gesture" = "Please enter your gesture password.";
+"skip_gesture" = "Skip";
+"success_gesture" = "Gesture password set successfully!";
+"hi_gesture" = "HI ! Smart Money Manager.";
+
 

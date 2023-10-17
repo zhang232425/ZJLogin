@@ -122,7 +122,7 @@ extension BiometricsAuthManager {
         util.isUserEnabled = false
     }
     
-    func clearLastBiomtryData() {
+    func clearLastBiometryData() {
         util.resetBiometryData()
     }
     

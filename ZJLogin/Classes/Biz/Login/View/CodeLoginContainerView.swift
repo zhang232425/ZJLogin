@@ -37,8 +37,6 @@ class CodeLoginContainerView: UIScrollView {
     
     private lazy var confirmButton = PageMainButton(title: Locale.login.localized.capitalized)
     
-    private lazy var testButton = PageMainButton(title: "测试")
-
     private lazy var pwdLoginButton = UIButton(type: .custom).then {
         $0.contentEdgeInsets = .init(top: 0, left: 6, bottom: 0, right: 6)
         $0.setTitleColor(UIColor.standard.orange, for: .normal)
@@ -89,14 +87,8 @@ private extension CodeLoginContainerView {
             $0.height.equalTo(45.auto)
         }
         
-        testButton.add(to: containerView).snp.makeConstraints {
-            $0.top.equalTo(confirmButton.snp.bottom).offset(25.auto)
-            $0.left.right.equalToSuperview().inset(20.auto)
-            $0.height.equalTo(45.auto)
-        }
-        
         pwdLoginButton.add(to: containerView).snp.makeConstraints {
-            $0.top.equalTo(testButton.snp.bottom).offset(8.auto)
+            $0.top.equalTo(confirmButton.snp.bottom).offset(8.auto)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(36.auto)
             $0.bottom.equalToSuperview().inset(10.auto)
@@ -111,9 +103,7 @@ extension CodeLoginContainerView {
     var passwordLoginTap: ControlEvent<()> { pwdLoginButton.rx.tap }
     
     var confirmTap: ControlEvent<()> { confirmButton.rx.tap }
-    
-    var testTap: ControlEvent<()> { testButton.rx.tap }
-    
+
     var phoneNumber: String { phoneField.text }
     
     var code: String { codeField.text }

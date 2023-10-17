@@ -69,7 +69,14 @@ private extension UIApplication {
             print("注册")
             
         case .initGesture(let password, let loginCompletion):
-            print("设置手势密码")
+            if let nav = topViewController?.navigationController {
+                let vc = GestureSetupViewController(type: .enable, isFromLogin: true, loginPassword: password)
+                vc.loginCompletion = {
+                    NotificationCenter.default.post(name: ZJNotification.didLoginCompletion, object: nil)
+                    loginCompletion?()
+                }
+                nav.pushViewController(vc, animated: true)
+            }
             
         case .agreement(let url):
             print("同意协议")

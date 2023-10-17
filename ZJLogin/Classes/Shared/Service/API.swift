@@ -43,6 +43,11 @@ enum API {
     /// 输入邀请码
     case inputReferralCode(code: String)
     
+    /// MARK: - 手势密码
+    case setGesture(gesture: String, loginPwd: String)
+    case resetGesture(loginPwd: String?, gesture: String?, newGesture: String?)
+    case checkGesture(gesture: String, type: Int)
+    
     
 }
 
@@ -87,6 +92,15 @@ extension API: ZJRequestTargetType {
             return "/api/app/user/biometrics/enable"
         case .checkBiometrics:
             return "/api/app/user/biometrics/check"
+            
+        // 手势密码
+        case .setGesture:
+            return "/api/app/user/gesture/password/set"
+        case .resetGesture:
+            return "/api/app/user/gesture/password/reset"
+        case .checkGesture:
+            return "/api/app/user/gesture/password/check"
+        
     
         }
     }
@@ -115,6 +129,9 @@ extension API: ZJRequestTargetType {
             return .post
             
         case .checkBiometrics, .fetchBiometricInfo:
+            return .post
+            
+        case .setGesture, .resetGesture, .checkGesture:
             return .post
             
         }
@@ -180,9 +197,25 @@ extension API: ZJRequestTargetType {
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
             
         case .fetchBiometricInfo(let account, let biometricsType):
-        
             let params: [String: Any] = ["phoneNumber": account,
                                         "biometricsType": biometricsType]
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            
+        case .setGesture(let gesture, let loginPwd):
+            let params: [String: Any] = ["gesture": gesture,
+                                         "loginPwd": loginPwd]
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            
+        case .resetGesture(let loginPwd, let gesture, let newGesture):
+            var params: [String: Any] = [:]
+            params["loginPwd"] = loginPwd
+            params["gesture"] = gesture
+            params["newGesture"] = newGesture
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+        
+        case .checkGesture(let gesture, let type):
+            let params: [String: Any] = ["gesture": gesture,
+                                         "type": type]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
             
         }

@@ -74,8 +74,6 @@ private extension CodeLoginController {
              self?.containerView.code ?? "")
         }.bind(to: viewModel.loginBySMS.inputs).disposed(by: disposeBag)
         
-        containerView.testTap.bind(to: viewModel.getPassword.inputs).disposed(by: disposeBag)
-        
         Observable.merge(viewModel.getCaptchaOnLogin.errors,
                          viewModel.loginBySMS.errors)
         .subscribeNext(weak: self, type(of: self).onError)

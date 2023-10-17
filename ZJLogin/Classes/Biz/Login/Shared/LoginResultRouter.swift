@@ -74,13 +74,13 @@ private extension LoginResultRouter {
     func handleResult(hasPassword: Bool, profile: ZJUserProfile?) {
         
         if let uid = profile?.userId, let account = profile?.phoneNumber {
-//            let mgr = BiometricsAuthManager(uid: uid, account: account)
-//            switch entry {
-//            case .sms, .pwd:
-//                mgr.clearLastBiometryData()
-//            case .biometry: break
-//            }
-//            mgr.refreshBiometricsIdIfNeeded()
+            let mgr = BiometricsAuthManager(uid: uid, account: account)
+            switch entry {
+            case .sms, .pwd:
+                mgr.clearLastBiometryData()
+            case .biometry: break
+            }
+            mgr.refreshBiometricsIdIfNeeded()
         }
         
         if let data = profile {

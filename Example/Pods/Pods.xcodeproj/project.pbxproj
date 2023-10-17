@@ -1070,6 +1070,15 @@
 		46EB2E0000BFC0 /* ZJLocalizable-ZJLocalizable in Resources */ = {isa = PBXBuildFile; fileRef = FD2B9CAB2A6596FC35F6B611E5F42FD6 /* ZJLocalizable-ZJLocalizable */; };
 		46EB2E0000C390 /* ZJRegion-ZJRegion in Resources */ = {isa = PBXBuildFile; fileRef = 61706C52A722C7072ECE7CDEB5156231 /* ZJRegion-ZJRegion */; };
 		46EB2E0000C520 /* ZJValidator-ZJValidator in Resources */ = {isa = PBXBuildFile; fileRef = FA08430103907551C394D3F177B69783 /* ZJValidator-ZJValidator */; };
+		D64E0B8F2ADE236500BA1A4F /* ZJNotification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E0B8E2ADE236500BA1A4F /* ZJNotification+Extension.swift */; };
+		D64E0B912ADE273300BA1A4F /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E0B902ADE273300BA1A4F /* UINavigationController+Extension.swift */; };
+		D66ADF672AD6483900CB32D3 /* GestureSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66ADF662AD6483900CB32D3 /* GestureSetupViewController.swift */; };
+		D66ADF6A2AD687BC00CB32D3 /* GestureIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66ADF692AD687BC00CB32D3 /* GestureIndicator.swift */; };
+		D66ADF6C2AD694F400CB32D3 /* GestureRemindLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66ADF6B2AD694F400CB32D3 /* GestureRemindLabel.swift */; };
+		D66ADF6E2AD69DBA00CB32D3 /* GestureLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66ADF6D2AD69DBA00CB32D3 /* GestureLockView.swift */; };
+		D66ADF702AD6AF1900CB32D3 /* GestureCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66ADF6F2AD6AF1900CB32D3 /* GestureCircleView.swift */; };
+		D67F96C02AD92F86002178AA /* Request+gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F96BF2AD92F86002178AA /* Request+gesture.swift */; };
+		D689891A2AD7F50B002EACD4 /* GestureSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68989192AD7F50B002EACD4 /* GestureSetupViewModel.swift */; };
 		D6ABC7092AD5407B0089EC3B /* Request+biometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ABC7082AD5407B0089EC3B /* Request+biometry.swift */; };
 /* End PBXBuildFile section */
 
@@ -3176,6 +3185,15 @@
 		CD54121DDA84872534168702B5F92950 /* HandyJSON */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HandyJSON; path = HandyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD63405120225602F8DF676BC778C745 /* ZJRequest-ZJRequest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "ZJRequest-ZJRequest"; path = ZJRequest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28763E37EDD385B2F7D6DE39F447784 /* ZJLocalizable */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJLocalizable; path = ZJLocalizable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D64E0B8E2ADE236500BA1A4F /* ZJNotification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZJNotification+Extension.swift"; sourceTree = "<group>"; };
+		D64E0B902ADE273300BA1A4F /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		D66ADF662AD6483900CB32D3 /* GestureSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureSetupViewController.swift; sourceTree = "<group>"; };
+		D66ADF692AD687BC00CB32D3 /* GestureIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureIndicator.swift; sourceTree = "<group>"; };
+		D66ADF6B2AD694F400CB32D3 /* GestureRemindLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRemindLabel.swift; sourceTree = "<group>"; };
+		D66ADF6D2AD69DBA00CB32D3 /* GestureLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureLockView.swift; sourceTree = "<group>"; };
+		D66ADF6F2AD6AF1900CB32D3 /* GestureCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureCircleView.swift; sourceTree = "<group>"; };
+		D67F96BF2AD92F86002178AA /* Request+gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+gesture.swift"; sourceTree = "<group>"; };
+		D68989192AD7F50B002EACD4 /* GestureSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureSetupViewModel.swift; sourceTree = "<group>"; };
 		D6ABC7082AD5407B0089EC3B /* Request+biometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+biometry.swift"; sourceTree = "<group>"; };
 		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C5BC805E4D0610414D6D3C234F2DDB /* ZJRequest */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJRequest; path = ZJRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -5013,6 +5031,7 @@
 		46EB2E000037D0 /* Biz */ = {
 			isa = PBXGroup;
 			children = (
+				D66ADF642AD646ED00CB32D3 /* Gesture */,
 				46EB2E000037E0 /* Alert */,
 				46EB2E00003810 /* Biometry */,
 				46EB2E00003840 /* Login */,
@@ -5182,6 +5201,8 @@
 				46EB2E00003A60 /* UIBarButtonItem+Extension.swift */,
 				46EB2E00003A70 /* UIColor+Extension.swift */,
 				46EB2E00003A80 /* UIImage+Extension.swift */,
+				D64E0B8E2ADE236500BA1A4F /* ZJNotification+Extension.swift */,
+				D64E0B902ADE273300BA1A4F /* UINavigationController+Extension.swift */,
 			);
 			name = Extension;
 			path = ZJLogin/Classes/Extension;
@@ -5263,6 +5284,7 @@
 				46EB2E00003C30 /* Request+login.swift */,
 				D6ABC7082AD5407B0089EC3B /* Request+biometry.swift */,
 				46EB2E00003C40 /* Request+password.swift */,
+				D67F96BF2AD92F86002178AA /* Request+gesture.swift */,
 				46EB2E00003C60 /* UIViewController+route.swift */,
 				46EB2E00003C70 /* UserDefault+userInfo.swift */,
 				46EB2E00003C80 /* ZJLoginModule+register.swift */,
@@ -5959,6 +5981,43 @@
 			);
 			name = "Pods-ZJLogin_Example";
 			path = "Target Support Files/Pods-ZJLogin_Example";
+			sourceTree = "<group>";
+		};
+		D66ADF642AD646ED00CB32D3 /* Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				D68989182AD7F4D3002EACD4 /* ViewModel */,
+				D66ADF682AD6877E00CB32D3 /* View */,
+				D66ADF652AD646F700CB32D3 /* Controller */,
+			);
+			path = Gesture;
+			sourceTree = "<group>";
+		};
+		D66ADF652AD646F700CB32D3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D66ADF662AD6483900CB32D3 /* GestureSetupViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D66ADF682AD6877E00CB32D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D66ADF692AD687BC00CB32D3 /* GestureIndicator.swift */,
+				D66ADF6B2AD694F400CB32D3 /* GestureRemindLabel.swift */,
+				D66ADF6D2AD69DBA00CB32D3 /* GestureLockView.swift */,
+				D66ADF6F2AD6AF1900CB32D3 /* GestureCircleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D68989182AD7F4D3002EACD4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D68989192AD7F50B002EACD4 /* GestureSetupViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -8976,6 +9035,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64E0B8F2ADE236500BA1A4F /* ZJNotification+Extension.swift in Sources */,
 				46EB2E0000A000 /* Agreement.swift in Sources */,
 				46EB2E0000A0C0 /* AgreementCheckButton.swift in Sources */,
 				46EB2E0000A190 /* API.swift in Sources */,
@@ -8994,8 +9054,11 @@
 				46EB2E0000A170 /* GetCaptchaRequester.swift in Sources */,
 				46EB2E00009FB0 /* InitPasswordController.swift in Sources */,
 				46EB2E0000A180 /* InputChecker.swift in Sources */,
+				D689891A2AD7F50B002EACD4 /* GestureSetupViewModel.swift in Sources */,
 				46EB2E00009FD0 /* LivedemoAgreementController.swift in Sources */,
+				D66ADF702AD6AF1900CB32D3 /* GestureCircleView.swift in Sources */,
 				46EB2E0000A1A0 /* Locale.swift in Sources */,
+				D67F96C02AD92F86002178AA /* Request+gesture.swift in Sources */,
 				46EB2E00009F50 /* LoginContainerController.swift in Sources */,
 				46EB2E00009F70 /* LoginResultRouter.swift in Sources */,
 				46EB2E00009FA0 /* LoginViewModel.swift in Sources */,
@@ -9005,10 +9068,12 @@
 				46EB2E0000A120 /* PageMainButton.swift in Sources */,
 				46EB2E0000A130 /* PasswordField.swift in Sources */,
 				46EB2E00009F90 /* PasswordLoginContainerView.swift in Sources */,
+				D66ADF6A2AD687BC00CB32D3 /* GestureIndicator.swift in Sources */,
 				46EB2E00009F60 /* PasswordLoginController.swift in Sources */,
 				46EB2E00009FC0 /* PasswordViewModel.swift in Sources */,
 				46EB2E0000A140 /* PhoneNumberField.swift in Sources */,
 				46EB2E0000A020 /* RegisterContainerView.swift in Sources */,
+				D66ADF672AD6483900CB32D3 /* GestureSetupViewController.swift in Sources */,
 				46EB2E0000A010 /* RegisterTipsModel.swift in Sources */,
 				46EB2E00009FE0 /* RegisterViewController.swift in Sources */,
 				46EB2E0000A030 /* RegisterViewModel.swift in Sources */,
@@ -9023,6 +9088,7 @@
 				46EB2E0000A070 /* UIBarButtonItem+Extension.swift in Sources */,
 				46EB2E0000A080 /* UIColor+Extension.swift in Sources */,
 				46EB2E0000A090 /* UIImage+Extension.swift in Sources */,
+				D64E0B912ADE273300BA1A4F /* UINavigationController+Extension.swift in Sources */,
 				46EB2E0000A200 /* UIViewController+route.swift in Sources */,
 				46EB2E0000A210 /* UserDefault+userInfo.swift in Sources */,
 				46EB2E0000A230 /* ZJCountDownTimer.swift in Sources */,
@@ -9030,6 +9096,8 @@
 				46EB2E0000A240 /* ZJLoginModule.swift in Sources */,
 				46EB2E0000A220 /* ZJLoginModule+register.swift in Sources */,
 				46EB2E0000A150 /* ZJTextField.swift in Sources */,
+				D66ADF6C2AD694F400CB32D3 /* GestureRemindLabel.swift in Sources */,
+				D66ADF6E2AD69DBA00CB32D3 /* GestureLockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
